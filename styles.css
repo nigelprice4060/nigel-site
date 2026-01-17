@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: "Poppins";
+}
+
+.top {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.top .logo {
+    width: 75px;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+
+.top h1 {
+    margin-bottom: 0px;
+    font-size: 50px;
+    letter-spacing: 20px;
+    transition: 1s;
+}
+
+.loaded .top h1 {
+    letter-spacing: 3px;
+}
+
+.top p {
+    margin-top: 0px;
+    letter-spacing: 2px;
+    transition: 1s;
+}
+
+.loaded .top p {
+    letter-spacing: 8px;
+}
+
+.nav {
+    display: flex;
+    padding: 10px 50px;
+    margin: 0px 25px;
+    border-radius: 10px;
+    background: black;
+}
+
+.sticky {
+  z-index: 11;
+  position: fixed;
+  top: 10px;
+  width: 96.9%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+.nav a{
+    margin-right: 40px;
+    color: rgb(176, 176, 176);
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+
+.nav a:hover{
+    transform: translateY(-1px);
+    letter-spacing: 2px;
+    color: white;
+}
+
+.initial {
+    margin-top: 125px;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(.17,.67,.18,1);
+}
+
+.loaded .initial {
+    margin-top: 0;
+}
+
+.content {
+    filter: opacity(0%);
+    transition-duration: 1s;
+}
+
+a {
+    text-decoration: none;
+}
+
+.loaded .content{
+    filter: opacity(100%);
+}
+
+.row1 {
+    display: flex;
+    margin: 20px 0px;
+    justify-content: center;
+}
+
+.row1 div {
+    position: relative;
+    background: black;
+    padding: 0px;
+    margin: 0px;
+    width: 1300px;
+    height: 250px;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+}
+
+/*
+    when pasting, change the bottom pixel amount to something respective
+    also width should be as big as whatever div it's in
+*/
+
+.row1 img {
+    position: absolute;
+    bottom: -210px;
+    right: 0;
+    width: 1300px;
+    transition-duration: 0.5s;
+}
+
+.row1 div:hover img{
+    transform: scale(1.1);
+}
+
+.row1 div:hover p{
+    color: white;
+    transform: translateX(50px);
+}
+
+/*
+    everything in the above comment applies to this h1 and p below
+    excluding the 0 margin of course
+*/
+
+.row1 h1 {
+    color: white;
+    position: absolute;
+    top: 25%;
+    left: 100px;
+    z-index: 9;
+    margin: 0px;
+}
+
+.row1 p {
+    color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 45%;
+    left: 100px;
+    z-index: 9;
+    margin: 0px;
+    transition-duration: 0.3s;
+}
+
+/*
+.row2 {
+    display: flex;
+    margin: 20px 0px;
+    justify-content: center;
+}
+
+.row2 div {
+    background: black;
+    color: white;
+    padding: 10px 0px;
+    margin: 0px 20px;
+    width: 580px;
+    height: 348px;
+    border-radius: 10px;
+    text-align: left;
+    overflow: hidden;
+    transition-duration: 0.3s;
+}
+
+.row2 div:hover {
+    width: 620px;
+    margin: 0px 20px;
+}
+
+.row2 img {
+    position: relative;
+    /* filter: brightness(50%); */
+    /* bottom: 120px;
+    right: 0;
+    width: 660px;
+    right: 0;
+    width: 620px; 
+    height: 348px;
+    top: -20%;
+    transition-duration: 0.5s;
+}
+
+.row2 div:hover img{
+    filter: brightness(85%);
+}
+
+.row2 h1 {
+    position: relative;
+    top: 75%;
+    margin: 0px;
+    padding-left: 25px;
+    z-index: 9;
+    transition-duration: 0.5s;
+}
+
+.row2 div:hover h1{
+    letter-spacing: 5px;
+}
+
+.row2 p {
+    position: relative;
+    top: 80%;
+    margin: 0px;
+    padding-left: 25px;
+    z-index: 9;
+}
+
+ROW 2 REDO BELOW
+
+*/ 
+
+.row2 {
+    display: flex;
+    margin: 20px 0px;
+    justify-content: center;
+}
+
+.row2 div {
+    position: relative;
+    background: black;
+    color: white;
+    padding: 10px 0px;
+    margin: 0px 20px;
+    width: 580px;
+    height: 348px;
+    border-radius: 10px;
+    text-align: left;
+    overflow: hidden;
+    transition-duration: 0.3s;
+}
+
+.row2 div:hover {
+    width: 620px;
+    margin: 0px 20px;
+}
+
+
+.row2 img {
+    position: absolute;
+    left: 0;
+    width: 620px;
+    height: 348px;
+    top: 0;
+    transition: all 0.5s ease;
+}
+
+.fade-image {
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.5s ease, width 0.5s ease, filter 0.5s ease;
+}
+
+.row2 div:hover .fade-image {
+    opacity: 1;
+}
+
+.row2 div:hover img {
+    filter: brightness(85%);
+}
+
+
+.row2 h1 {
+    position: relative;
+    top: 75%;
+    margin: 0px;
+    padding-left: 25px;
+    z-index: 10;
+    transition-duration: 0.5s;
+}
+
+.row2 div:hover h1 {
+    letter-spacing: 5px;
+}
+
+.row2 p {
+    position: relative;
+    top: 80%;
+    margin: 0px;
+    padding-left: 25px;
+    z-index: 10; /* Increased z-index to stay on top */
+}
+
+/* END OF ROW2 */
+
+.row2 h1, .row2 p {
+    pointer-events: none;
+}
+
+.row4 {
+    display: flex;
+    margin: 20px 0px;
+    justify-content: center;
+}
+
+.row4 div {
+    padding: 10px 0px;
+    margin: 0px 20px;
+    border-radius: 10px;
+}
+
+.row4 h1 {
+    margin: 0px;
+}
+
+.row4 p {
+    margin: 0px;
+}
+
+.row4 .text {
+    width: 780px;
+    height: 200px;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+.row4 .visual {
+    width: 380px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.row4 img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 380px;
+}
+
+.row5 {
+    display: flex;
+    margin: 20px 0px;
+    justify-content: center;
+}
+
+.row5 div {
+    background: black;
+    padding: 10px 0px;
+    margin: 0px 20px;
+    width: 1200px;
+    height: 200px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+}
+
+.row5 h1 {
+    margin: 0px;
+}
+
+.row5 p {
+    margin: 0px;
+}
+
+.row3 {
+    display: flex;
+    margin: 20px 0px;
+    justify-content: center;
+}
+
+.row3 div {
+    background: black;
+    color: white;
+    padding: 10px 0px;
+    margin: 0px 20px;
+    width: 375px;
+    height: 200px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.row3 h1 {
+    margin: 0px;
+}
+
+.row3 i {
+    margin: 0px;
+    padding: 25px 0px;
+    font-size: 50px;
+}
+
+.row3 a {
+    text-decoration: none;
+}
+
+.row3 .stat {
+    padding-top: 40px;
+}
+
+.row3 .stat h1 {
+    font-size: 40px;
+}
+
+.row3 .buy {
+    padding-top: 40px;
+}
+
+.careers {
+    display: flex;
+}
+
+.careers img {
+    width: 700px;
+}
+
+.careers .pfp {
+    width: 200px;
+    margin-right: 60px;
+}
+
+.careers .header3 {
+    display:flex;
+    align-items: center;
+    font-size: 30px;
+}
+
+.lisitinggobo {
+    width: 700px;
+}
+
+.indent {
+    text-indent: 50px;
+}
+
+.buy {
+    position: relative;
+    transition-duration: 0.4s;
+}
+
+.buy h1{
+    transition-duration: 0.4s;
+}
+
+.buy i {
+    transition-duration: 0.6s;
+    transition-timing-function: cubic-bezier(.32,.76,.51,1);
+}
+
+.buy:hover {
+    transform: translateX(10px);
+}
+
+.buy:hover h1 {
+    transform: translateX(5px);
+    animation: blinker 1s cubic-bezier(.32,.76,.51,1) infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.buy:hover i {
+    transform: translateX(25px);
+}
+
+.bot {
+    display: flex;
+    background: black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 100px;
+}
+
+.bot a {
+    color: gray;
+    text-decoration: none;
+}
+
+.bot a:hover {
+    color: white;
+}
+
+.links {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.links ul{
+    margin: 0;
+    padding-left: 0;
+    padding-right: 50px;
+    list-style-type: none;
+}
+
+.socials {
+    margin: 0;
+    font-size: 50px;
+}
+
+.righty {
+    text-align: right;
+    padding-right: 50px;
+}
+
+.black {
+    color: black;
+}
+
+.pad {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.row1 h1, .row1 p {
+    pointer-events: none;
+}
