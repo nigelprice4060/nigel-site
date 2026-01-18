@@ -23,6 +23,18 @@ body {
     top: 50px;
 }
 
+h1 {
+    font-size: 22px
+}
+
+p {
+    font-size: 12px;
+}
+
+a {
+    font-size: 12px;
+}
+
 .top h1 {
     margin-bottom: 0px;
     font-size: 50px;
@@ -507,9 +519,10 @@ ROW 2 REDO BELOW
     list-style-type: none;
 }
 
-.socials {
+.socials a {
     margin: 0;
     font-size: 50px;
+    padding-right: 10px;
 }
 
 .righty {
